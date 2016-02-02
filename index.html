@@ -218,7 +218,7 @@
             <!-- Heading -->
             <div class="slim-heading">
                 <h2>参加名单</h2>
-                <p>当前52人(206-02-02),按笔画排序,名单持续更新中</p>
+                <p>名单按笔画排序.当前<span id="count_name"></span> 人 (2016-02-02),名单持续更新中</p>
             </div>
 
             <h4>1、拟邀请老师名单</h4>
@@ -231,197 +231,8 @@
 
             <h4>2、已报名同学名单</h4>
             <table class="table table-hover table-bordered table-striped">
-                <tbody>
-                <tr>
-                    <td>伍善灿</td>
-                    <td>
-                        何映文
-                    </td>
-                    <td>
-                        张沛仪
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        徐兴华
-                    </td>
-                    <td>
-                        梁桂年
-                    </td>
-                    <td>
-                        梁翠年
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        梁雪年
-                    </td>
-                    <td>
-                        汤敏玲
-                    </td>
-                    <td>
-                        潘广文
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        潘教全
-                    </td>
-                    <td>
-                        潘春英
-                    </td>
-                    <td>
-                        潘照林
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        谢倚明
-                    </td>
-                    <td>
-                        邓丽仪
-                    </td>
-                    <td>
-                        邓丽君
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓丽帆
-                    </td>
-                    <td>
-                        邓乐善
-                    </td>
-                    <td>
-                        邓乾中
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓光文
-                    </td>
-                    <td>
-                        邓善炳
-                    </td>
-                    <td>
-                        邓善炽
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓善玲
-                    </td>
-                    <td>
-                        邓国善
-                    </td>
-                    <td>
-                        邓妙玲
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓妙英(南下)
-                    </td>
-                    <td>
-                        邓妙英(南岸)
-                    </td>
-                    <td>
-                        邓小燕
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓崇术
-                    </td>
-                    <td>
-                        邓崇真
-                    </td>
-                    <td>
-                        邓崇纪
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓建光
-                    </td>
-                    <td>
-                        邓志玲
-                    </td>
-                    <td>
-                        邓惠仪
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓振光
-                    </td>
-                    <td>
-                        邓昭铭
-                    </td>
-                    <td>
-                        邓煥贞
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓燕贞
-                    </td>
-                    <td>
-                        邓燕霞
-                    </td>
-                    <td>
-                        邓燕青
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓爱欢
-                    </td>
-                    <td>
-                        邓红芳
-                    </td>
-                    <td>
-                        邓绮嫦
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓翠芳
-                    </td>
-                    <td>
-                        邓赛华
-                    </td>
-                    <td>
-                        邓超发
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邓超干
-                    </td>
-                    <td>
-                        邓超盛
-                    </td>
-                    <td>
-                        邓运开
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        黃丽珊
-                    </td>
-                    <td>
-                        黃发华
-                    </td>
-                    <td>
-                        黃敬宗
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        黄丽冰
-                    </td>
-                </tr>
+                <tbody id="block_name">
+
 
                 </tbody>
             </table>
@@ -495,10 +306,45 @@
     $(document).ready(function () {
         $("#nav").sticky({topSpacing: 0, leftSpacing: 0});
     });
-</script>
 
-<!-- Custom JS. Type your JS code in custom.js file -->
-<script src="js/custom.js"></script>
+
+    var a_name = [
+        "伍善灿", " 何映文", " 张沛仪", " 徐兴华", " 梁桂年", " 梁翠年", " 梁雪年", " 汤敏玲", " 潘广文", " 潘教全", " 潘春英", " 潘照林", " 谢倚明",
+        " 邓丽仪", " 邓丽君", " 邓丽帆", " 邓乐善", " 邓乾中", " 邓光文", " 邓善炳", " 邓善炽", " 邓善玲", " 邓国善", " 邓妙玲", " 邓妙英(南下)", " 邓妙英(南岸)",
+        " 邓小燕", " 邓崇术", " 邓崇真", " 邓崇纪", " 邓建光", " 邓志玲", " 邓惠欢", " 邓惠仪", " 邓振光", " 邓昭铭", " 邓煥贞", " 邓燕贞", " 邓燕霞", " 邓燕青", " 邓爱欢",
+        " 邓红芳", " 邓绮嫦", " 邓翠芳", " 邓赛华", " 邓超发", "邓超干", " 邓超盛", " 邓运开", " 黃丽珊", " 黃发华", " 黃敬宗", " 黄丽冰"
+
+    ];
+
+
+    var ii = 0;
+    var jj = 0;
+    var s = "";
+
+    for (var i in a_name) {
+        var s_name = a_name[i];
+        if (ii == 3) {
+            s += "</tr>";
+            ii = 0;
+        }
+        if (ii == 0) {
+            s += "<tr><td>";
+        }
+        else {
+            s += "<td>";
+        }
+        s += s_name;
+        s += "</td>";
+        ii++;
+        jj++;
+    }
+
+
+    $("#block_name").html(s);
+    $("#count_name").text(jj);
+
+
+</script>
 
 
 </body>
