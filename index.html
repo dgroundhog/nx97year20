@@ -46,7 +46,7 @@
 
             <div class="slim-slider slim-outer">
 
-                <img src="img/logo.jpg" class="img-responsive"/>
+                <img src="" src2="img/logo.jpg" class="img-responsive"/>
 
             </div>
 
@@ -150,14 +150,14 @@
                     <h4>5、迎宾签字牌</h4>
                     <div class="slim-slider slim-outer text-center">
 
-                        <img src="img/welcome.jpg" class="img-responsive"/>
+                        <img src="" src2="img/welcome.jpg" class="img-responsive"/>
 
                     </div>
 
 
                     <h4>6、文化衫</h4>
                     <div class="slim-slider slim-outer  text-center">
-                        <img src="img/tshirt.jpg" class="img-responsive">
+                        <img src="" src2="img/tshirt.jpg" class="img-responsive">
                     </div>
 
                 </div>
@@ -264,7 +264,7 @@
             <!-- Blog Item -->
             <div class="row">
                 <div class="col-md-12">
-                    <img src="img/yingmu.jpg" class="img-responsive"/>
+                    <img src="" src2="img/yingmu.jpg" class="img-responsive"/>
                 </div>
             </div>
         </div>
@@ -303,9 +303,7 @@
 
 <script type="text/javascript">
     /* Sticky */
-    $(document).ready(function () {
-        $("#nav").sticky({topSpacing: 0, leftSpacing: 0});
-    });
+
 
 
     var a_name = [
@@ -338,10 +336,19 @@
         ii++;
         jj++;
     }
-    
+
     $(document).ready(function () {
         $("#block_name").html(s);
         $("#count_name").text(jj);
+
+
+        $("img").each(function(){
+            var src = $(this).attr("src2");
+            $(this).attr("src",src);
+        });
+
+
+        $("#nav").sticky({topSpacing: 0, leftSpacing: 0});
     });
 
 </script>
